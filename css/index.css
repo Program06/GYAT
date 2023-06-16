@@ -1,0 +1,1289 @@
+/*STANDAARD SETTINGS*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --blue: #00E0FF;
+  }
+
+  html,body{
+    scroll-behavior: smooth;
+  }
+
+
+i{
+    cursor: pointer;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: var(--blue);
+}
+
+ul{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+
+li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li a{
+    text-decoration: none;
+    color: #FF0000;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+ul #iconhover:hover{
+transform: scale(1.2);  
+transition: 1s;  
+}
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    position: relative;
+    max-width: 190px;
+   }
+   
+.input {
+    width: 100%;
+    height: 40px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+   }
+   
+.input::placeholder {
+    color: #9e9ea7;
+   }
+   
+.input:focus, input:hover {
+    outline: none;
+    border-color: rgba(234,76,137,0.4);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+   }
+   
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+   }
+   
+.searchsectionimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../imagehome/firsthomepagebanner.jpg");
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 924px) {
+  .searchsectionimg {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.searchform{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 350px;
+    width: 1200px;
+    margin-top: 10rem;
+}
+
+@media only screen and (max-width: 1213px) {
+  .searchform {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 100px;
+    margin-top: 2rem;
+  }
+}
+
+.searchform .searchinput{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background-color: var(--blue);
+    border-radius: 5px;
+    text-shadow: 2px 2px 2px 0px;
+    height: 1.8rem;
+    width: 12rem;
+    padding-left: 10px;
+}
+
+.searchinput:hover{
+    border: none;
+    background-color: #6deeff;
+}
+
+.searchinput[type=text] {
+color: rgb(0, 0, 0);
+}
+
+
+
+.searchform .searchbutton{
+height: 1.8rem;
+background-color: #FF0000;
+border: none;
+width: 12.5rem;
+border-radius: 5px;
+text-shadow: 2px 2px 2px 0px;
+color: var(--blue);
+}
+   
+.boekkortingtekst{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    height: 3rem;
+    font-size: 30px;
+    margin-left: 20px;
+    margin: 20px;
+}
+
+.boekkortingtekst span{
+    color: red;
+    padding: 6px;
+    
+    font-weight: bold;
+}
+
+.vakantiekortingen{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+@media only screen and (max-width: 1413px) {
+  .vakantiekortingen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+}
+
+@media only screen and (max-width: 855px) {
+  .vakantiekortingen {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin-top: 2rem;
+  }
+}
+
+
+.kortingfoto1{
+    background-image: url("../kortingfoto's/foto1.jpg");
+    background-size: cover;
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px gray;
+}
+
+@media only screen and (max-width: 1413px) {
+  .kortingfoto1 {
+    margin-top: 2rem;
+  }
+}
+
+.kortingfoto1:hover{
+    transform: scale(1.03);
+    transition: 1s;
+}
+
+.kortingfoto2:hover{
+    transform: scale(1.03);
+    transition: 1s;
+}
+
+.kortingfoto3:hover{
+    transform: scale(1.03);
+    transition: 1s;
+}
+
+.kortingfoto2{
+    background-image: url("../kortingfoto's/foto2.jpg");
+    background-size: cover;
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px gray;
+}
+
+@media only screen and (max-width: 1413px) {
+  .kortingfoto2 {
+    margin-top: 2rem;
+  }
+}
+
+.kortingfoto3{
+    background-image: url("../kortingfoto's/foto3.jpg");
+    background-size: cover;
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px gray;
+}
+
+@media only screen and (max-width: 1413px) {
+  .kortingfoto3 {
+    margin-top: 2rem;
+  }
+}
+
+.verrereizen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.hoeveelbestemmingen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.vanafprijs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.buttoncenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 350px;
+}
+
+.vakantiebekijken{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.4rem;
+    width: 120px;
+    background-color: #FF0000;
+    border-radius: 10px;
+    height: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.vakantiebekijken:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+
+.volgonstekst{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6rem;
+    width: 100%;
+}
+
+.backgroundtekst{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #FF0000;
+    width: 1000px;
+    height: 2.5rem;
+    background-color: var(--blue);
+}
+
+.extratekst{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.extrateksten{
+    font-size: 1.2rem;
+}
+
+.extraicon{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.test{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeimgtwee{
+    margin-top: 1.2rem;
+    background-image: url("../imagehome/secondhomepagebanner.jpg");
+    height: 350px;
+    width: 95%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 5px 5px 5px 0px gray;
+}
+
+.imgtweeteksteen{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.imgtweeteksttwee{
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#alleboekingentekst{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 120px;
+    width: 100%;
+    color: red;
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+p span{
+  margin-left: 1rem;
+  font-weight: bolder;
+}
+
+
+#alleboekingen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+.boekingen{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10rem;
+}
+
+@media only screen and (max-width: 1413px) {
+  .boekingen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+  }
+}
+
+.boekingcard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 550px;
+    width: 350px;
+    box-shadow: 5px 5px 5px 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+
+.imgboekingcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 250px;
+}
+
+.imgboekingcard img{
+width: 100%;
+height: 100%;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+}
+
+.titleAndNights{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+}
+
+.titleAndNights p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+}
+
+.titleAndNights h3{
+    color: gray;
+    font-size: .9rem;
+}
+
+.heart-icon{
+  margin-left: 4rem;
+}
+
+.heart-icon.clicked {
+  color: red; /* Color when clicked */
+}
+
+
+
+
+
+.allinboekingen h1{
+    color: gray;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.allinboekingen ul{
+    display: grid;
+    padding-left: 1rem;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+
+.prijsenboeken{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+}
+
+.prijsenboeken button{
+    border: none;
+    background-color: #00E0FF;
+    border-radius: 20px;
+    width: 100px;
+    height: 40px;
+    
+
+}
+
+
+
+
+
+
+
+
+.teskteenfooter{
+    padding-top: 1rem;
+}
+
+footer{
+    height: 12rem;
+    width: 100%;
+    background-color: var(--blue);
+}
+
+.contactgegevensfooter{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+
+.ownerinlogfooter a{
+    text-decoration: none;
+}
+
+.iconfooter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0.3rem;
+    --stroke: #ff0000;
+    --fill: #ffc73a;
+  }
+  
+  .rating input {
+    appearance: unset;
+  }
+  
+  .rating label {
+    cursor: pointer;
+  }
+  
+  .rating svg {
+    width: 1rem;
+    height: 1rem;
+    overflow: visible;
+    fill: transparent;
+    stroke: var(--stroke);
+    stroke-linejoin: bevel;
+    stroke-dasharray: 12;
+    animation: idle 4s linear infinite;
+    transition: stroke 0.2s, fill 0.5s;
+  }
+  
+  @keyframes idle {
+    from {
+      stroke-dashoffset: 24;
+    }
+  }
+  
+  .rating label:hover svg {
+    stroke: var(--fill);
+  }
+  
+  .rating input:checked ~ label svg {
+    transition: 0s;
+    animation: idle 4s linear infinite, yippee 0.75s backwards;
+    fill: var(--fill);
+    stroke: var(--fill);
+    stroke-opacity: 0;
+    stroke-dasharray: 0;
+    stroke-linejoin: miter;
+    stroke-width: 8px;
+  }
+  
+  @keyframes yippee {
+    0% {
+      transform: scale(1);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30% {
+      transform: scale(0);
+      fill: var(--fill);
+      fill-opacity: 0;
+      stroke-opacity: 1;
+      stroke: var(--stroke);
+      stroke-dasharray: 10;
+      stroke-width: 1px;
+      stroke-linejoin: bevel;
+    }
+  
+    30.1% {
+      stroke: var(--fill);
+      stroke-dasharray: 0;
+      stroke-linejoin: miter;
+      stroke-width: 8px;
+    }
+  
+    60% {
+      transform: scale(1.2);
+      fill: var(--fill);
+    }
+  }
+  
+
+
+
+
+/*INLOG PAGE BEZOKERS*/
+
+
+#inlogpagebezoekers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+    
+}
+
+.formsetter{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30rem;
+    width: 100%;
+}
+
+.inloggenbezoekers {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--blue);
+    padding: 20px;
+    border-radius: 10px;
+    color: #FF0000;
+    text-align: center;
+    font-size: 20px;
+    width: 600px;
+    height: 250px;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .extrainlogimg{
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px gray;
+  }
+  
+  .inloggenbezoekers .emailbezoekersinput {
+    height: 15px;
+    outline: none;
+    border: 2px solid #ffffff;
+    background: transparent;
+    padding: 20px 10px;
+    border-radius: 5px;
+    transition: .5s;
+    color: white;
+    font-size: 20px;
+    background-color: white;
+  }
+  
+  .inloggenbezoekers .emailbezoekersinput:focus {
+    background: var(--blue);
+  }
+  
+  .inloggenbezoekers .inloggenbezoekersbutton {
+    width: 100%;
+    color: white;
+    transition: .5s;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    height: 45px;
+    border-radius: 5px;
+    background: #FF0000;
+    align-self: flex-end;
+
+  }
+
+
+  /*ABOUT US PAGE*/
+
+  #aboutuspage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+  }
+
+  #aboutuspage p{
+    width: 850px;
+    font-size: 1.5rem;
+    text-align: center;
+
+  }
+
+/*CONTACT PAGE*/
+
+#contactpage{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30rem;
+}
+
+.contact-form {
+    background-color: var(--blue);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+
+  }
+  
+  .contact-form .contactlabel {
+    color: black;
+  }
+  
+  .contact-form .heading {
+    font-size: 24px;
+    color: #FF0000;
+    ;
+    margin-bottom: 12px;
+    font-weight: bold;
+    display: block;
+  }
+  
+  .contact-form .contactform {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form .contactlabel {
+    margin-bottom: 10px;
+  }
+  
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .contact-form .contactinput, .contact-form textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .contact-form .contactinput:focus, .contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #FF0000;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .contact-form .contactbutton[type="submit"] {
+    background-color: #FF0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .contact-form .contactbutton[type="submit"]:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .contactgegevens{
+    height: 300px;
+    width: 500px;
+    background-color: var(--blue);
+    border-radius: 10px;
+  }
+
+.contactgegevenstekst{
+    margin: 10px;
+    text-align: center;
+}
+
+.contactgegevenstekst i{
+    margin-right: 5px;
+}
+
+.contactimg{
+    height: 300px;
+    width: 500px;
+    border-end-start-radius: 10px;
+    border-end-end-radius: 10px;
+}
+
+/*REGISTEREN PAGINA*/
+
+#registerenpage{
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.registerensetter{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registerenbezoekers {
+    max-width: 320px;
+    width: 100%;
+    background-color: var(--blue);
+    padding: 20px;
+    box-shadow: 0px 0px 0px 4px rgba(52, 52, 53, 0.185);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FF0000;
+    font-weight: bold;
+  }
+  
+  .registerenbezoekerslabel {
+    color: rgb(0, 0, 0);
+    margin-bottom: 4px;
+  }
+  
+  .registereninput {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #4a5568;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .registereninput:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px #cbd5e0;
+  }
+  
+  .registereninput:valid {
+    border: 1px solid green;
+  }
+  
+  .registereninput:invalid {
+    border: 1px solid rgba(14, 14, 14, 0.205);
+  }
+  
+  .registerenbutton {
+    background-color: #FF0000;
+    color: var(--blue);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #bewerken{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    height: 30px;
+    width: 120px;
+    background-color: #ff0000;
+    border-radius: 40px;
+    font-weight: bolder ;
+  }
+
+
+.backgroundimginlogpage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../imagehome/basicimg.jpg");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.inlogformadmin {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #1e1e1e;
+    padding: 20px;
+    border: 1px solid #3d3c3c;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    width: 40%;
+  }
+  
+  .inlogformadmin .inputformadmin {
+    height: 35px;
+    outline: none;
+    border: 2px solid #00E0FF;
+    background: transparent;
+    padding: 20px 10px;
+    border-radius: 5px;
+    transition: .5s;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .inlogformadmin .inputformadmin:focus {
+    background: #00E0FF;
+  }
+  
+  .ownerinlogbutton {
+    width: 100%;
+    color: white;
+    transition: .5s;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    height: 45px;
+    border-radius: 5px;
+    background: #ff0000;
+    align-self: flex-end;
+  }
+
+
+
+
+#pp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+
+}
+
+#pp p{
+  padding: 2rem;
+  width: 800px;
+    font-family: 'Noticia Text',serif!important;
+    font-size: 19px!important;
+    font-size: 1.1875rem!important;
+    font-weight: normal!important;
+    line-height: 1.6!important; 
+    color: #1a1a1a!important;
+    -webkit-font-smoothing: antialiased!important;
+    -moz-osx-font-smoothing: grayscale!important;
+  
+}
+
+
+
+
+
+
+
+.driekaarten{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url("../imagehome/basicimg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.adminbuttons{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 400px;
+width: 350px;
+background-color: #1e1e1e;
+box-shadow: 5px 5px 5px 0px;
+border-radius: 10px;
+}
+
+#adminpanel{
+  font-size: 2rem;
+  color: #00E0FF;
+  
+}
+
+.adminpagebuttons {
+  display: block;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #000000;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  z-index: 1;
+  margin: 1rem;
+ }
+ 
+ .adminpagebuttons::before,
+ .adminpagebuttons::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 100%;
+  transform: skew(15deg);
+  transition: all 0.5s;
+  overflow: hidden;
+  z-index: -1;
+ }
+ 
+ .adminpagebuttons::before {
+  left: -10px;
+  background: #ff0000;
+ }
+ 
+ .adminpagebuttons::after {
+  right: -10px;
+  background: #00E0FF;
+ }
+ 
+ .adminpagebuttons:hover::before,
+ .adminpagebuttons:hover::after {
+  width: 58%;
+ }
+ 
+ .adminpagebuttons:hover span {
+  color: #000000;
+  transition: 0.3s;
+ }
+ 
+ .adminpagebuttons span {
+  color: #03045e;
+  font-size: 18px;
+  transition: all 0.3s ease-in;
+  font-weight: bolder;
+ }
+
+ .buttonadmin{
+  text-decoration: none;
+  color: black;
+ }
+
+.buttonadmin i{
+  margin-left: .5rem;
+ }
+
+.toevoegenpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url(../imagehome/basicimg.jpg);
+  background-size: cover;
+  flex-direction: column;
+}
+
+.inlogblock{
+  display: flex;
+justify-content: center;
+align-items: center;
+background-color: #1e1e1e;
+border-radius: 10px;
+}
+
+.toevoegenform{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.toevoegenform .toevoegeninput{
+width: 550px;
+height: 40px;
+border-radius: 6px;
+outline: 1px #00E0FF solid;
+}
+
+.toevoegeninput{
+width: 550px;
+height: 40px;
+border-radius: 6px;
+outline: 1px #00E0FF solid;
+
+}
+
+.toevoegenform .toevoegenlabel{
+  color: white;
+margin-top: 2rem;
+margin-left: 4px;
+margin-bottom: 0.8rem;
+}
+
+#fileToUpload{
+  color: white;
+font-size: 	1rem; 
+width: 400px; 	
+outline: 0px;
+color: #1e1e1e;
+}
+
+
+#beheerder{
+  background-color: #00E0FF;
+  width: 7rem;
+  margin-top: 2rem;
+  border-radius: 20px;
+  border: none;
+  font-family:'Times New Roman', Times, serif;
+  font-size: 0.8rem; 
+  color: black;   
+}
+
+#accountaanmaken{
+  text-align: center;
+  border: none;
+  color: black;
+  background-color: black;
+}
+      
+.boekingenplane{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: white;
+}
+
+.privacypolicy{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.privacypolicy a {
+  text-decoration: none;
+  color: black;
+}
+
+.con{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+    .alert {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+        padding: 20px;
+        background-color: var(--blue);
+        color: white;
+        font-size: 18px;
+        font-size: 1.4rem;
+    }
+
+    .alert span{
+      color: red;
+      margin: .4rem;
+     font-weight: bolder;
+    }
+
+    .alert button {
+        padding: 10px 20px;
+        color: white;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 20px;
+        margin-left: 2rem;
+        background-color: red;
+        
+    }
+
+    #personalinfosection{
+      height: 50rem;
+    }
+
+    .warninginfo{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 1.8rem;
+      color: white;
+      background-color: red;
+      font-size: 1.2rem;
+    }
+
+    .gegevens{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: blue;
+      width: 100%;
+      height: 20rem;
+    }
+
+    .heart-icon {
+      transition: transform 1s;
+    }
+ 
+.heart-icon.clicked{
+  transform: scale(1.4) rotate(360deg);
+}
+
+#userboeking{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50rem;
+  width: 100%;
+}
+
+.userboekingform {
+  width: 1200px;
+  background-color: var(--blue);
+  padding: 20px;
+  box-shadow: 0px 0px 0px 4px rgba(52, 52, 53, 0.185);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
