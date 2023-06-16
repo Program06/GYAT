@@ -150,7 +150,7 @@ while($row = $ophalen->fetch(PDO::FETCH_ASSOC)){
             <div class='prijsenboeken'>
                 <p>€$row[prijs],- <span>p.p.</span></p>
                 <i id='likebutton' class='fa-solid fa-heart heart-icon' onclick='toggleHeart(this)'></i>
-                <a href=''>/boek nu!</a>
+                <a href='userboeking.php? id={$row['id']}'>boek nu!</a>
             </div>
         </div>
     ";

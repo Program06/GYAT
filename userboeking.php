@@ -26,21 +26,60 @@
          </div>
         </ul>
     </nav>
+
+
+<?php
+
+include('db.php');
+
+$ID = $_GET['id'];
+$boeken = $pdo->prepare("SELECT * FROM reizen WHERE id=:id");
+$boeken->bindParam(':id', $ID, PDO::PARAM_INT);
+$boeken->execute();
+
+$opgehaaldedata = $boeken->fetch(PDO::FETCH_ASSOC);
+
+
+
+
+
+
+
+//session starten en ervoor zorgen dat persoonsgegevens er ook in staan
+
+
+
+
+
+
+
+
+
+
+
+
+?>
+
+
+
+
 <section id="userboeking">
 <form class="registerenbezoekers" method="POST">
     <span class="title">Boeken voltooien</span>
     <label class="registerenbezoekerslabel" for="username">Voornaam</label>
-    <input class="registereninput" type="text" id="username" name="voornaam" required="" placeholder="Voornaam">
+    <input class="registereninput" type="text" id="username" name="voornaam" required="" placeholder="Voornaam" readonly value="<?php echo $opgehaaldedata['id'];?>">
     <label class="registerenbezoekerslabel" for="username">Achternaam</label>
-    <input class="registereninput" type="text" id="username" name="achternaam" required="" placeholder="Achternaam">
+    <input class="registereninput" type="text" id="username" name="achternaam" required="" placeholder="Achternaam" readonly value="<?php echo $opgehaaldedata['id'];?>">
     <label  class="registerenbezoekerslabel" for="email">Email</label>
-    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Email">
+    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Email" readonly value="<?php echo $opgehaaldedata['id'];?>">
     <label  class="registerenbezoekerslabel" for="email">Reis</label>
-    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Reis">
+    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Reis" readonly value="<?php echo $opgehaaldedata['naam'];?>"> 
+    <label  class="registerenbezoekerslabel" for="email">Prijs</label>
+    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Reis" readonly value="<?php echo $opgehaaldedata['prijs'];?>"> 
     <label  class="registerenbezoekerslabel" for="email">Datum</label>
-    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Datum">
+    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Datum" >
     <label  class="registerenbezoekerslabel" for="email">reisID</label>
-    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="reisID">
+    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="reisID" readonly value="<?php echo $opgehaaldedata['id'];?>">
     <button class="registerenbutton" name="submit" type="submit">Boek je reis!</button>
   </form>
   </section>
