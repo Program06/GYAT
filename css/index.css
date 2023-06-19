@@ -523,14 +523,15 @@ border-top-right-radius: 10px;
     padding-right: 0.5rem;
 }
 
-.prijsenboeken button{
+.prijsenboeken a{
     border: none;
     background-color: #00E0FF;
     border-radius: 20px;
     width: 100px;
     height: 40px;
-    
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
