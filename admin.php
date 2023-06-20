@@ -1,3 +1,8 @@
+
+<?php
+
+include('db.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +41,40 @@
   </span>
 </button>
 </div>
+<?php
+/*
+SELECT  boeken.id as id, 
+        member.mem_id as mem_id,
+        member.firstname as member_firstname,
+        member.lastname as member_lastname,
+        reizen.id as reizen_id,
+        reizen.naam as reizen_naam,
+        reizen.prijs as reizen_prijs
+FROM boeken 
+INNER JOIN reizen ON boeken.reizen_id = reizen.id
+INNER JOIN member ON boeken.users_id = member.mem_id;
+WHERE id=:id
+
+
+*/
+$boeken = $pdo->prepare("
+SELECT  boeken.id as id, 
+        member.mem_id as mem_id,
+        member.firstname as member_firstname,
+        member.lastname as member_lastname,
+        reizen.id as reizen_id,
+        reizen.naam as reizen_naam,
+        reizen.prijs as reizen_prijs
+FROM boeken 
+INNER JOIN reizen ON boeken.reizen_id = reizen.id
+INNER JOIN member ON boeken.users_id = member.mem_id;
+");
+$boeken->execute();
+$opgehaaldedata = $boeken->fetchAll();
+?>
+
+
+
 </div>
 </body>
 </html>

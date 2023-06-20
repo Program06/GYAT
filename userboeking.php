@@ -1,44 +1,40 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <nav>
-        <ul>
-         <li><a href="index.php">GYAT</a></li>
-         <a id="iconhover" href="aboutus.php"><i class="fa-solid fa-info"></i> Over ons</a>
-         <a id="iconhover" href="inloggenvoorbezoekers.php"><i class="fa-regular fa-user"></i> inloggen</a>  
-         <a id="iconhover" href="registerenbezoekers.php"><i class="fa-regular fa-registered"></i> registeren</a> 
-         <a id="iconhover" href="contact.php"><i class="fa-regular fa-address-card"></i> Contact</a>  
-        
+<?php
+include('db.php');
+include('header.php');
+if($_SESSION['logged_in'] != true){
+  header('Location: inloggenvoorbezoekers.php');
+}
+?>
 
-
-         <div class="group">
-         <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
-         <input placeholder="Search" type="search" class="input">
-         </div>
-        </ul>
-    </nav>
 
 
 <?php
 
-include('db.php');
+
 
 $ID = $_GET['id'];
-$boeken = $pdo->prepare("SELECT * FROM reizen WHERE id=:id");
+/*
+SELECT  boeken.id as id, 
+        member.mem_id as mem_id,
+        member.firstname as member_firstname,
+        member.lastname as member_lastname,
+        reizen.id as reizen_id,
+        reizen.naam as reizen_naam,
+        reizen.prijs as reizen_prijs
+FROM boeken 
+INNER JOIN reizen ON boeken.reizen_id = reizen.id
+INNER JOIN member ON boeken.users_id = member.mem_id;
+WHERE id=:id
+
+
+*/
+$boeken = $pdo->prepare("
+SELECT *
+FROM reizen 
+WHERE id=:id");
 $boeken->bindParam(':id', $ID, PDO::PARAM_INT);
 $boeken->execute();
-
 $opgehaaldedata = $boeken->fetch(PDO::FETCH_ASSOC);
-
 
 
 
@@ -67,17 +63,18 @@ $opgehaaldedata = $boeken->fetch(PDO::FETCH_ASSOC);
 <form class="registerenbezoekers" method="POST">
     <span class="title">Boeken voltooien</span>
     <label class="registerenbezoekerslabel" for="username">Voornaam</label>
-    <input class="registereninput" type="text" id="username" name="voornaam" required="" placeholder="Voornaam" readonly value="<?php echo $opgehaaldedata['id'];?>">
+    <input class="registereninput" type="text" id="username" name="voornaam" required="" placeholder="Voornaam" readonly value="<?php echo $_SESSION['firstname'];?>">
     <label class="registerenbezoekerslabel" for="username">Achternaam</label>
-    <input class="registereninput" type="text" id="username" name="achternaam" required="" placeholder="Achternaam" readonly value="<?php echo $opgehaaldedata['id'];?>">
+    <input class="registereninput" type="text" id="username" name="achternaam" required="" placeholder="Achternaam" readonly value="<?php echo $_SESSION['lastname'];?>">
     <label  class="registerenbezoekerslabel" for="email">Email</label>
-    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Email" readonly value="<?php echo $opgehaaldedata['id'];?>">
+    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Email" readonly value="<?php echo $_SESSION['email'];?>">
     <label  class="registerenbezoekerslabel" for="email">Reis</label>
     <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Reis" readonly value="<?php echo $opgehaaldedata['naam'];?>"> 
     <label  class="registerenbezoekerslabel" for="email">Prijs</label>
     <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Reis" readonly value="<?php echo $opgehaaldedata['prijs'];?>"> 
-    <label  class="registerenbezoekerslabel" for="email">Datum</label>
-    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Datum" >
+    <label class="registerenbezoekerslabel" for="datum">Datum</label>
+<input class="registereninput" type="date" id="datum" name="datum" required="" min="2023-06-25">
+<p id="geselecteerde-datum"></p>
     <label  class="registerenbezoekerslabel" for="email">reisID</label>
     <input class="registereninput" type="email" id="email" name="email" required="" placeholder="reisID" readonly value="<?php echo $opgehaaldedata['id'];?>">
     <button class="registerenbutton" name="submit" type="submit">Boek je reis!</button>

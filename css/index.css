@@ -1191,6 +1191,38 @@ color: #1e1e1e;
   color: white;
 }
 
+.bars{
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .bars {
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 300px;
+    height: 40vh;
+    background: #4d9559;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+}
+
+
 .privacypolicy{
   display: flex;
   justify-content: center;
