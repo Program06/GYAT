@@ -41,6 +41,8 @@ include('db.php');
   </span>
 </button>
 </div>
+
+</div>
 <?php
 /*
 SELECT  boeken.id as id, 
@@ -62,6 +64,7 @@ SELECT  boeken.id as id,
         member.mem_id as mem_id,
         member.firstname as member_firstname,
         member.lastname as member_lastname,
+        member.email as member_email,
         reizen.id as reizen_id,
         reizen.naam as reizen_naam,
         reizen.prijs as reizen_prijs
@@ -73,8 +76,44 @@ $boeken->execute();
 $opgehaaldedata = $boeken->fetchAll();
 ?>
 
+<div id="table">
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>member ID</th>
+            <th>Voornaam</th>
+            <th>Achternaam</th>
+            <th>E-mail</th>
+            <th>Reis ID</th>
+            <th>Reisnaam</th>
+            <th>Reisprijs</th>
+            <th>Accept</th>
+            <th>delete</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($opgehaaldedata as $data): ?>
+            <tr>
+                <td><?php echo $data['id']; ?></td>
+                <td><?php echo $data['mem_id']; ?></td>
+                <td><?php echo $data['member_firstname']; ?></td>
+                <td><?php echo $data['member_lastname']; ?></td>
+                <td><?php echo $data['member_email']; ?></td>
+                <td><?php echo $data['reizen_id']; ?></td>
+                <td><?php echo $data['reizen_naam']; ?></td>
+                <td><?php echo $data['reizen_prijs']; ?></td>
+                
+                <td><button class="tablebuttonaccept">accept</button></td>
+                <td><button class="tablebuttondelete"><a href="boekingdelete.php?id=<?php echo $data['id']; ?>">delete</a></button></td>
+                
+            </tr>
 
+        <?php endforeach; ?>
+    </tbody>
+</table>
+        </div>
 
-</div>
 </body>
 </html>
