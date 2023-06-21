@@ -1,5 +1,4 @@
 <?php
-
 include('db.php');
 include('header.php');
 ?>
@@ -7,27 +6,21 @@ include('header.php');
 
     <div class="warninginfo"><p>Let op deze pagina kan personelijke gegevens bevatten!</p></div>
 
-    <section id="personalinfosection">
-
-    <div class="gegevens">
-  
-    </div>
 
 
 
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="loggedinimg">
+    <form class="registerenbezoekers" method="POST">
+    <span class="title">Persoonlijke gegevens</span>
+    <label class="registerenbezoekerslabel" for="username">Voornaam</label>
+    <input class="registereninput" type="text" id="username" name="voornaam" required="" placeholder="Voornaam" readonly value="<?php echo $_SESSION['firstname'];?>">
+    <label class="registerenbezoekerslabel" for="username">Achternaam</label>
+    <input class="registereninput" type="text" id="username" name="achternaam" required="" placeholder="Achternaam" readonly value="<?php echo $_SESSION['lastname'];?>">
+    <label  class="registerenbezoekerslabel" for="email">Email</label>
+    <input class="registereninput" type="email" id="email" name="email" required="" placeholder="Email" readonly value="<?php echo $_SESSION['email'];?>">
+    <button class="registerenbutton"><a href="logout.php">Uitloggen</a></button>
+  </form>  
+  </div>
 
 
 <footer>
